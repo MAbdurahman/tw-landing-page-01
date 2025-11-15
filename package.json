@@ -1,0 +1,16 @@
+{
+  "name": "tw-landing-page-01",
+  "version": "1.0.0",
+  "main": "main.js",
+  "repository": "https://github.com/MAbdurahman/tw-landing-page-01.git",
+  "author": "Mahdi Abdurrahman <mdbdrrhm@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "tailwindcss -i ./src/input.css -o ./css/main.css",
+    "watch": "tailwindcss -i ./src/input.css -o ./css/main.css --watch"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.17",
+    "tailwindcss": "^4.1.17"
+  }
+}
