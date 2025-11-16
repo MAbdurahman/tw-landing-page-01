@@ -5,19 +5,22 @@
   :root, :host {
     --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
-      "Courier New", monospace;
-    --color-gray-800: oklch(27.8% 0.033 256.848);
-    --color-neutral-100: oklch(97% 0 0);
-    --color-neutral-400: oklch(70.8% 0 0);
+    --font-mono: 'Roboto Mono', monospace;
+    --color-gray-50: oklch(98.5% 0.002 247.839);
+    --color-neutral-400: hsl(210.19, 0%, 58%);
+    --color-neutral-900: hsl(210.19, 0%, 10%);
     --spacing: 0.25rem;
     --text-2xl: 1.5rem;
     --text-2xl--line-height: calc(2 / 1.5);
     --text-3xl: 1.875rem;
     --text-3xl--line-height: calc(2.25 / 1.875);
-    --font-weight-bold: 700;
+    --font-weight-medium: 600;
+    --font-weight-semibold: 700;
+    --font-weight-bold: 800;
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
+    --font-body: 'Work Sans', sans-serif;
+    --font-heading: 'Libre Baskerville', serif;
   }
 }
 @layer base {
@@ -171,6 +174,12 @@
 @layer utilities {
   .container {
     width: 100%;
+    @media (width >= 20rem) {
+      max-width: 20rem;
+    }
+    @media (width >= 30rem) {
+      max-width: 30rem;
+    }
     @media (width >= 40rem) {
       max-width: 40rem;
     }
@@ -186,6 +195,9 @@
     @media (width >= 96rem) {
       max-width: 96rem;
     }
+    @media (width >= 120rem) {
+      max-width: 120rem;
+    }
   }
   .mx-auto {
     margin-inline: auto;
@@ -196,11 +208,33 @@
   .mt-12 {
     margin-top: calc(var(--spacing) * 12);
   }
-  .bg-gray-800 {
-    background-color: var(--color-gray-800);
+  .table {
+    display: table;
+  }
+  .border-collapse {
+    border-collapse: collapse;
+  }
+  .transform {
+    transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
+  }
+  .resize {
+    resize: both;
+  }
+  .border {
+    border-style: var(--tw-border-style);
+    border-width: 1px;
+  }
+  .bg-gray-50 {
+    background-color: var(--color-gray-50);
   }
   .text-center {
     text-align: center;
+  }
+  .font-body {
+    font-family: var(--font-body);
+  }
+  .font-heading {
+    font-family: var(--font-heading);
   }
   .text-2xl {
     font-size: var(--text-2xl);
@@ -214,11 +248,19 @@
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
   }
-  .text-neutral-100 {
-    color: var(--color-neutral-100);
+  .font-medium {
+    --tw-font-weight: var(--font-weight-medium);
+    font-weight: var(--font-weight-medium);
+  }
+  .font-semibold {
+    --tw-font-weight: var(--font-weight-semibold);
+    font-weight: var(--font-weight-semibold);
   }
   .text-neutral-400 {
     color: var(--color-neutral-400);
+  }
+  .text-neutral-900 {
+    color: var(--color-neutral-900);
   }
   .capitalize {
     text-transform: capitalize;
@@ -229,15 +271,74 @@
   .underline {
     text-decoration-line: underline;
   }
+  .outline {
+    outline-style: var(--tw-outline-style);
+    outline-width: 1px;
+  }
+}
+@layer base {
+  *, *::after, *::before {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+  }
+  *::-moz-focus-inner {
+    border: 0;
+  }
+  *:focus {
+    outline: none;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+}
+@property --tw-rotate-x {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-rotate-y {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-rotate-z {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-skew-x {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-skew-y {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
 }
 @property --tw-font-weight {
   syntax: "*";
   inherits: false;
 }
+@property --tw-outline-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
+      --tw-rotate-x: initial;
+      --tw-rotate-y: initial;
+      --tw-rotate-z: initial;
+      --tw-skew-x: initial;
+      --tw-skew-y: initial;
+      --tw-border-style: solid;
       --tw-font-weight: initial;
+      --tw-outline-style: solid;
     }
   }
 }
