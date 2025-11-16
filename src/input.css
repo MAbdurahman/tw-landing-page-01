@@ -14,7 +14,6 @@
    --font-size-paragraph: 1rem;
    --font-size-small: 0.8rem;
    /************************* font weight *************************/
-
    --font-weight-light: 300;
    --font-weight-normal: 400;
    --font-weight-medium: 600;
@@ -117,7 +116,6 @@
    --breakpoint-3xl: 120rem; /*1920px;*/
 
 
-
 }
 
 @layer base {
@@ -144,5 +142,70 @@
 
    html {
       scroll-behavior: smooth;
+   }
+
+   /*===============================================================
+          Typography Scale - 1.250 - Major Third
+   ==================================================================*/
+   h1, h2, h3, h4, h5, h6 {
+      font-family: 'Libre Baskerville', serif;
+      font-weight: 700;
+      text-rendering: optimizeLegibility;
+   }
+
+   h1 {
+      font-size: 3.815rem;
+   }
+
+   h2 {
+      font-size: 3.052rem;
+   }
+
+   h3 {
+      font-size: 2.441rem;
+   }
+
+   h4 {
+      font-size: 1.953rem;
+   }
+
+   h5 {
+      font-size: 1.563rem;
+   }
+
+   h6 {
+      font-size: 1.25rem;
+   }
+
+   p, small {
+      font-family: 'Work Sans', sans-serif;
+      text-rendering: optimizeLegibility;
+   }
+
+   p {
+      font-size: 1rem;
+   }
+
+   small {
+      font-size: 0.8rem;
+   }
+
+   img {
+      width: 100%;
+      height: auto;
+   }
+   ul {
+      list-style: none;
+   }
+
+   a {
+      text-decoration: none;
+      cursor: pointer;
+      opacity: 0.75;
+   }
+
+   a:hover {
+      cursor: pointer;
+      opacity: 1;
    }
 }

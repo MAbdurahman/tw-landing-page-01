@@ -14,7 +14,6 @@
     --text-2xl--line-height: calc(2 / 1.5);
     --text-3xl: 1.875rem;
     --text-3xl--line-height: calc(2.25 / 1.875);
-    --font-weight-medium: 600;
     --font-weight-semibold: 700;
     --font-weight-bold: 800;
     --default-font-family: var(--font-sans);
@@ -208,22 +207,6 @@
   .mt-12 {
     margin-top: calc(var(--spacing) * 12);
   }
-  .table {
-    display: table;
-  }
-  .border-collapse {
-    border-collapse: collapse;
-  }
-  .transform {
-    transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
-  }
-  .resize {
-    resize: both;
-  }
-  .border {
-    border-style: var(--tw-border-style);
-    border-width: 1px;
-  }
   .bg-gray-50 {
     background-color: var(--color-gray-50);
   }
@@ -248,10 +231,6 @@
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
   }
-  .font-medium {
-    --tw-font-weight: var(--font-weight-medium);
-    font-weight: var(--font-weight-medium);
-  }
   .font-semibold {
     --tw-font-weight: var(--font-weight-semibold);
     font-weight: var(--font-weight-semibold);
@@ -267,13 +246,6 @@
   }
   .uppercase {
     text-transform: uppercase;
-  }
-  .underline {
-    text-decoration-line: underline;
-  }
-  .outline {
-    outline-style: var(--tw-outline-style);
-    outline-width: 1px;
   }
 }
 @layer base {
@@ -293,52 +265,64 @@
   html {
     scroll-behavior: smooth;
   }
-}
-@property --tw-rotate-x {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-rotate-y {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-rotate-z {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-skew-x {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-skew-y {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-border-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Libre Baskerville', serif;
+    font-weight: 700;
+    text-rendering: optimizeLegibility;
+  }
+  h1 {
+    font-size: 3.815rem;
+  }
+  h2 {
+    font-size: 3.052rem;
+  }
+  h3 {
+    font-size: 2.441rem;
+  }
+  h4 {
+    font-size: 1.953rem;
+  }
+  h5 {
+    font-size: 1.563rem;
+  }
+  h6 {
+    font-size: 1.25rem;
+  }
+  p, small {
+    font-family: 'Work Sans', sans-serif;
+    text-rendering: optimizeLegibility;
+  }
+  p {
+    font-size: 1rem;
+  }
+  small {
+    font-size: 0.8rem;
+  }
+  img {
+    width: 100%;
+    height: auto;
+  }
+  ul {
+    list-style: none;
+  }
+  a {
+    text-decoration: none;
+    cursor: pointer;
+    opacity: 0.75;
+  }
+  a:hover {
+    cursor: pointer;
+    opacity: 1;
+  }
 }
 @property --tw-font-weight {
   syntax: "*";
   inherits: false;
 }
-@property --tw-outline-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
-}
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
-      --tw-rotate-x: initial;
-      --tw-rotate-y: initial;
-      --tw-rotate-z: initial;
-      --tw-skew-x: initial;
-      --tw-skew-y: initial;
-      --tw-border-style: solid;
       --tw-font-weight: initial;
-      --tw-outline-style: solid;
     }
   }
 }
